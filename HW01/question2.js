@@ -1,25 +1,25 @@
 function findMaxConsecutiveNumbers(nums) 
 {
-    		//keep track of current and overall max
-				var max_count = 0;
-				var curr_count = 0;
-				for (var i = 0; i < nums.length; i++) 
-				{
+    //keep track of current and overall max
+	var max_count = 0;
+	var curr_count = 0;
+	for (var i = 0; i < nums.length; i++) 
+	{
 					
-  				if (nums[i] === 3)
-					{
-							curr_count++;	
-							// update max
-							max_count = curr_count > max_count ? curr_count : max_count;
+  		if (nums[i] === 3)
+		{
+			curr_count++;	
+			// update max
+			max_count = curr_count > max_count ? curr_count : max_count;
 							
-					}
-					else
-					{
-						//reset count if it reaches non-zero
-						curr_count = 0;
-					}
-				}
-				return max_count;
+		}
+		else
+		{
+			//reset count if it reaches non-zero
+			curr_count = 0;
+		}
+	}
+	return max_count;
 }
 
 //Test cases
