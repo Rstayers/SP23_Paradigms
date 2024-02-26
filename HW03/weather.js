@@ -14,7 +14,7 @@ function toCelsius() {
         document.getElementById("result-parent").style.visibility = "visible";
     } else {
         // Display warning message for invalid input
-        document.getElementById("result-parent").innerText = "Please input a valid number!";
+        document.getElementById("result").innerText = "Please input a valid number!";
 		document.getElementById("result").style.color = "red";
         document.getElementById("result-parent").style.visibility = "visible";
         
