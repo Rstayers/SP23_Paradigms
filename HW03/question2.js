@@ -3,7 +3,10 @@ function solve(amount, bottles) {
     const queue = [[[...Array(bottles.length).fill(0)], [[...Array(bottles.length).fill(0)]]]]; // Initialize with all bottles empty and an empty path
     visited.add(queue[0][0].toString());
 
-    while (queue.length > 0) {
+	//start BFS traversal
+    while (queue.length > 0) 
+	{
+
         const [currentState, currentPath] = queue.shift();
 
         // Check if any bottle reaches the target amount
