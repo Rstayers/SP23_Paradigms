@@ -1,6 +1,6 @@
 function solve(amount, bottles) {
     const visited = new Set();
-    const queue = [[[...Array(bottles.length).fill(0)], []]]; // Initialize with all bottles empty and an empty path
+    const queue = [[[...Array(bottles.length).fill(0)], [[...Array(bottles.length).fill(0)]]]]; // Initialize with all bottles empty and an empty path
     visited.add(queue[0][0].toString());
 
     while (queue.length > 0) {
@@ -9,7 +9,9 @@ function solve(amount, bottles) {
         // Check if any bottle reaches the target amount
         for (let i = 0; i < currentState.length; i++) {
             if (currentState[i] === amount) {
-                return currentPath;
+				finalState = [...Array(bottles.length).fill(0)];
+				finalState[i] = amount;
+                return currentPath.concat([finalState]);
             }
         }
 
@@ -19,7 +21,7 @@ function solve(amount, bottles) {
             if (currentState[i] < bottles[i]) {
                 const nextStateFill = [...currentState];
                 nextStateFill[i] = bottles[i];
-                const nextPathFill = currentPath.push(nextStateFill);
+                const nextPathFill = [...currentPath, nextStateFill];
                 if (!visited.has(nextStateFill.toString())) {
                     queue.push([nextStateFill, nextPathFill]);
                     visited.add(nextStateFill.toString());
@@ -30,7 +32,7 @@ function solve(amount, bottles) {
             if (currentState[i] > 0) {
                 const nextStateEmpty = [...currentState];
                 nextStateEmpty[i] = 0;
-                const nextPathEmpty = currentPath.push(nextStateEmpty);
+                const nextPathEmpty = [...currentPath, nextStateEmpty];
                 if (!visited.has(nextStateEmpty.toString())) {
                     queue.push([nextStateEmpty, nextPathEmpty]);
                     visited.add(nextStateEmpty.toString());
@@ -44,7 +46,7 @@ function solve(amount, bottles) {
                     const pourAmount = Math.min(nextStatePour[i], bottles[j] - nextStatePour[j]);
                     nextStatePour[i] -= pourAmount;
                     nextStatePour[j] += pourAmount;
-                    const nextPathPour = currentPath.push(nextStatePour);
+                    const nextPathPour = [...currentPath, nextStatePour];
                     if (!visited.has(nextStatePour.toString())) {
                         queue.push([nextStatePour, nextPathPour]);
                         visited.add(nextStatePour.toString());
