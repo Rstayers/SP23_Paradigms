@@ -1,0 +1,70 @@
+@font-face {
+    font-family: 'TitleFont'; /*a name to be used later*/
+    src: url('assets/sun.otf') /*URL to font*/
+}
+.title {
+	font-family: 'TitleFont';
+	font-size: 40px;
+	color: #344e41;
+}
+#pad_schudeler{
+	padding-top: 30px;
+}
+.pad{
+	padding-top: 45px;
+}
+.pad-sm{
+	padding-top: 25px;
+}
+#pad_broker{
+	padding-top: 50px;
+}
+.link{
+	color: #588157;
+	font-weight: bold;
+}
+/* Selects all the "div" elements whose class = "myparagraph" */
+
+.content {
+    padding-top: 100px; /* Adjust the value to your desired amount of padding */
+	background-color: #dad7cd;
+	padding-bottom: 1000px;
+}
+h3{
+
+	font-family: 'TitleFont';
+
+	font-size: 20pt;
+	color: #344e41;
+}
+.dates{
+
+	font-family: 'TitleFont';
+
+	font-size: 16pt;
+	color: #344e41;
+}
+header {
+
+    background-color: #3a5a40; /* Change the color code to your desired background color */
+    color: white; /* Change the text color to your desired color */
+}
+.nav-link {
+
+    color: #dad7cd; /* Change the text color to your desired color */
+	--bs-nav-link-hover-color: #a3b18a;
+
+}
+.nav-tabs{
+	font-size: 20px;
+	--bs-nav-tabs-border-width: 5px;
+	--bs-nav-tabs-link-active-border-color:  #dad7cd;
+	--bs-nav-tabs-link-active-bg: #dad7cd;
+	--bs-nav-tabs-link-hover-border-color: #dad7cd;
+	--bs-nav-tabs-border-color: #dad7cd;
+	--bs-nav-tabs-link-active-color: #3a5a40;
+}
+#nav-custom{
+	background-color: #3a5a40;
+	height: 10px;
+}
