@@ -1,0 +1,11 @@
+<!-- templates/blog/index.html -->
+
+<h1>List of all blog posts</h1>
+<ul>
+  {% for post in posts %}
+    <li>
+      <a href="{% url 'view' post.id %}">{{ post.title }} by {{ post.author_name }} ({{ post.pub_date }})</a>
+    </li>
+  {% endfor %}
+</ul>
+
