@@ -20,7 +20,7 @@ public class FileParserTask implements Runnable {
             while ((line = br.readLine()) != null) {
                 // Assuming the first name is the first value and occupation is the second value in the CSV
                 String[] values = line.split(",");
-                String name = values[0].trim();
+                String name = values[4].trim();
                 String occupation = values[1].trim();
 
                 namesCount.merge(name, 1, (currentValue, one) -> (currentValue != null ? currentValue.intValue() : 0) + one.intValue());
