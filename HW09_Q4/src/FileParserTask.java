@@ -23,8 +23,8 @@ public class FileParserTask implements Runnable {
                 String name = values[0].trim();
                 String occupation = values[1].trim();
 
-                namesCount.merge(name, 1, (currentValue, one) -> currentValue.intValue() + one.intValue());
-                occupationsCount.merge(occupation, 1, (currentValue, one) -> currentValue.intValue() + one.intValue());
+                namesCount.merge(name, 1, (currentValue, one) -> (currentValue != null ? currentValue.intValue() : 0) + one.intValue());
+                occupationsCount.merge(occupation, 1, (currentValue, one) -> (currentValue != null ? currentValue.intValue() : 0) + one.intValue());
 
             }
         } catch (IOException e) {
